@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opaciti</title>
+</head>
+<body>
+    <img src="img/Dufan.jpg" id="gambar" alt="" srcset="">
+    <form id="formgambar">
+        <label for="pilihgambar">Ubah :</label>
+        <select name="pilihgambar" id="pilihgambar">
+            <option value="judul" disabled>Pilih Gambar</option>
+            <option value="img/Dufan.jpg">Gambar 1</option>
+            <option value="img/Jungle.jpg">Gambar 2</option>
+            <option value="img/TamanSaf.jpg">Gambar 3</option>
+        </select>
+        <select name="opaciti" id="opaciti">
+            <option value="judul"disabled>Opasitas</option>
+            <option value="0.2">0.2</option>
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+        </select>
+        <button type="submit">kirim</button>
+    </form>
+    
+    <script>
+        const formgambar = document.getElementById('formgambar');
+        const gambar = document.getElementById('gambar');
+
+        formgambar.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const pilihgambarValue = document.getElementById('pilihgambar').value;
+            const opacitiValue = document.getElementById('opaciti').value;
+
+            gambar.src = pilihgambarValue;
+            gambar.style.opacity = opacitiValue;
+        });
+
+    </script>
+</body>
+</html>
